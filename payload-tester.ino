@@ -55,7 +55,7 @@ int servoConvert(int angle){
 
 }
 
-int micr0SecondsConvert(int angle){
+int microSecondsConvert(int angle){
 
   return map(angle, 0, 270, 544, 2400);
 
