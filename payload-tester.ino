@@ -3,6 +3,8 @@
 Servo door, drop;
 int btn1 = 12, btn2 = 11;
 
+bool initServos = false;
+
 
 void setup() {
   // put your setup code here, to run once:
@@ -11,6 +13,13 @@ void setup() {
   drop.attach(A1);
   pinMode(btn1, INPUT_PULLUP);
   pinMode(btn2, INPUT_PULLUP);
+
+  if(initServos){
+
+    door.writeMicroseconds(microSecondsConvert(0));
+    drop.writeMicroseconds(microSecondsConvert(0));
+
+  }
 
 }
 
@@ -43,5 +52,11 @@ void loop() {
 int servoConvert(int angle){
 
   return map(angle, 0, 270, 0, 180);
+
+}
+
+int micr0SecondsConvert(int angle){
+
+  return map(angle, 0, 270, 544, 2400);
 
 }
